@@ -8,15 +8,7 @@ const items = [
         key: '0',
     },
     {
-        label: <a href="#">2nd menu item</a>,
-        key: '1',
-    },
-    {
         type: 'divider',
-    },
-    {
-        label: '3rd menu item',
-        key: '3',
     },
 ];
 const AdminMenu = () => (
