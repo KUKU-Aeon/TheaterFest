@@ -4,8 +4,7 @@ function HomePage() {
     return (
        <main>
            <div>
-               <h1>Welcome to my website!</h1>
-               <p>This is the homepage.</p>
+               <h1>Хм, похоже еще нет никаких новостей!</h1>
            </div>
        </main>
     );

@@ -9,7 +9,7 @@ function Footer()
         <footer>
             <nav>
                 <Link to="https://vk.com/teatrfestru"><img src={VK} alt="Ссылка на страничку В Контакте"/></Link>
-                <Link to="/"><img src={TG} alt="Ссылка на страничку в Телеграмм"/></Link>
+                <Link to="https://t.me/teatrfestru"><img src={TG} alt="Ссылка на страничку в Телеграмм"/></Link>
             </nav>
             <nav>
                 <Link to="/">Главная</Link>

@@ -12,18 +12,20 @@ const items = [
     },
 ];
 const AdminMenu = () => (
-    <Dropdown
-        menu={{
-            items,
-        }}
-        trigger={['click']}
-    >
-        <a onClick={(e) => e.preventDefault()}>
-            <Space style={{cursor: 'pointer'}}>
-                Click me
-                <DownOutlined />
-            </Space>
-        </a>
-    </Dropdown>
+    <main>
+        <Dropdown
+            menu={{
+                items,
+            }}
+            trigger={['click']}
+        >
+            <a onClick={(e) => e.preventDefault()}>
+                <Space style={{cursor: 'pointer'}}>
+                    Выберите действие
+                    <DownOutlined />
+                </Space>
+            </a>
+        </Dropdown>
+    </main>
 );
 export default AdminMenu;
