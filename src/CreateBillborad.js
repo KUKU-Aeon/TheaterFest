@@ -113,8 +113,8 @@ const CreateBill = () => {
                         </Upload>
                     </Form.Item>
                     <Form.Item>
-                        <Button htmlType="submit">
-                            Submit
+                        <Button htmlType="submit" style={{marginLeft: 250}}>
+                            Создать новую карточку
                         </Button>
                     </Form.Item>
                 </Form>
