@@ -12,6 +12,8 @@ function Billboard() {
                   style={{
                     width: "90%",
                     marginTop: 15,
+                    marginLeft: 20,
+                    border: "1px solid rgba(0, 0, 0, 0.25)"
                   }}
             >
               <Skeleton loading={!data} avatar active>
@@ -21,9 +23,9 @@ function Billboard() {
                       height: 350,
                       marginRight: 30
                     }}/>}
-                    title={<h1>{data.name}</h1>}
+                    title={<h1 style={{height: 10}}>{data.name}</h1>}
                     description={
-                      <><h3>Место: {data.place}</h3><p>Дата: {data.date}</p><p>Время: {data.time}</p></>
+                      <><h4>Описание: {data.description}</h4><h4>Место: {data.place}</h4><p>Дата: {data.date}</p><p>Время: {data.time}</p></>
                     }
                 />
                 <Button  style={{
