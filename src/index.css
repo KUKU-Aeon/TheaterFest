@@ -14,7 +14,7 @@ code {
 }
 
 
-@media (min-width: 360px)
+@media (min-width: 380px)
 {
   #root
   {
@@ -78,7 +78,7 @@ code {
   }
 }
 
-@media (max-width: 360px)
+@media (max-width:380px)
 {
   #root
   {
