@@ -6,6 +6,7 @@ function Header() {
     return (
         <header>
             <img src={Logo} alt=""/>
+            b
             <nav>
                 <Link to="/">Главная</Link>
                 <Link to="/billboard">Афиша</Link>

@@ -17,12 +17,12 @@ function Billboard() {
                   }}
             >
               <Skeleton loading={!data} avatar active>
+               <Avatar src={data.src} style={{
+                  width: "65%",
+                  height: "auto",
+                  margin: "0 20%"
+                 }}/>
                 <Meta
-                    avatar={<Avatar src={data.src} style={{
-                      width: 400,
-                      height: 350,
-                      marginRight: 30
-                    }}/>}
                     title={<h1 style={{height: 10}}>{data.name}</h1>}
                     description={
                       <><h4>Описание: {data.description}</h4><h4>Место: {data.place}</h4><p>Дата: {data.date}</p><p>Время: {data.time}</p></>
