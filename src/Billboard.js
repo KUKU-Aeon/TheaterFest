@@ -13,7 +13,8 @@ function Billboard() {
                     width: "90%",
                     marginTop: 15,
                     marginLeft: 20,
-                    border: "1px solid rgba(0, 0, 0, 0.25)"
+                    border: "1px solid rgba(0, 0, 0, 0.25)",
+                    zIndex: -1,
                   }}
             >
               <Skeleton loading={!data} avatar active>

@@ -20,7 +20,7 @@ const AdminMenu = () => (
             trigger={['click']}
         >
             <a onClick={(e) => e.preventDefault()}>
-                <Space style={{cursor: 'pointer', margin: "10px 0 0 10px"}}>
+                <Space style={{cursor: 'pointer', marginTop: 50}}>
                     Выберите действие
                     <DownOutlined />
                 </Space>
