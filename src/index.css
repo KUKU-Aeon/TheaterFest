@@ -14,6 +14,10 @@ code {
 }
 
 
+.hidden {
+  transform: translateY(-150px);
+}
+
 @media (min-width: 430px)
 {
   #root
@@ -28,6 +32,7 @@ code {
   {
     flex: 1 0 auto;
     min-height: calc(100vh - 80px);
+    margin-top: 120px;
   }
 
   footer {
@@ -36,7 +41,6 @@ code {
     margin-top: 20px;
     width: 100%;
   }
-
 
   header, footer
   {
@@ -47,6 +51,13 @@ code {
     list-style: none;
     background-color: #000000;
     padding: 20px 0;
+  }
+
+  header
+  {
+    position: fixed;
+    width: 100%;
+    transition: transform 1s ease;
   }
 
   header nav a, footer nav a
@@ -76,6 +87,11 @@ code {
     margin-left: 25px;
     width: 75%;
   }
+
+  .hamburger
+  {
+    display: none;
+  }
 }
 
 @media (max-width:430px)
@@ -86,12 +102,14 @@ code {
     flex-direction: column;
     height: 100%;
     font-family: "Montserrat", sans-serif;
+    overflow: hidden;
   }
 
   main
   {
     flex: 1 0 auto;
     min-height: calc(100vh - 80px);
+    margin-top: 120px;
   }
 
   footer {
@@ -99,6 +117,7 @@ code {
     bottom: 0;
     margin-top: 20px;
     width: 100%;
+    border-top: 1px solid #a4b0be;
   }
 
   footer nav
@@ -111,14 +130,20 @@ code {
   {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     align-items: center;
     list-style: none;
     background-color: #000000;
     padding: 5px 0;
   }
 
-  header nav a, footer nav a
+  header
+  {
+    position: fixed;
+    width: 100%;
+    transition: transform 1s ease;
+  }
+
+  footer nav a
   {
     margin: 0 5px;
     text-decoration: none;
@@ -127,30 +152,72 @@ code {
 
   header img{
     background-color: #FFFFFF;
-    width: 25px;
-    height: 25px;
+    width: 75px;
+    height: 75px;
     border-radius: 50%;
-    float: left;
+    margin: 20px 50px 0 50px;
+  }
+
+  .hamburger, .hamburger:active, .hamburger:focus {
+    border: 0;
+    height: 40px;
+    width: 40px;
+    padding: 0.5rem;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    float: right;
+    margin: 35px 50px;
+    outline: none !important;
+    border: none !important;
+    appearance: none !important;
+    z-index: 99999;
+  }
+
+  header div
+  {
+    width: 100%;
+    z-index: 9999;
   }
 
   header nav
   {
-    position: relative;
-    top: 0;
-    height: 100vh;
-    width: 100%;
-    color: #FFFFFF;
+    display: flex;
     flex-direction: column;
-    clip-path: circle(100px at 90% -30%);
-    -webkit-clip-path: circle(100px at 90% -30%);
-    transition: all 1s ease-out;
+    justify-content: center;
+    position: fixed;
+    left: -105%;
+    width: 100%;
+    background-color: #000000;
+    height: 100vh;
+    transition: 1s ease-in-out;
+
   }
 
-  header nav.open
+  header nav.active
   {
-    clip-path: circle(1000px);
-    -webkit-clip-path: circle(1000px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+    transition: 1s ease-in-out;
   }
+
+  header nav a
+  {
+    margin: 15px 50px;
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: 500;
+  }
+
 
   footer nav img
   {
@@ -165,4 +232,6 @@ code {
     margin-left: 25px;
     width: 75%;
   }
+
+
 }
