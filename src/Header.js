@@ -12,49 +12,42 @@ let scrolledDown = 0;
 
 function onScroll()
 {
-        if (!header) {
-            return;
-        }
+    if (!header)
+        return;
 
-        scroll = window.pageYOffset;
+    scroll = window.pageYOffset;
 
-        if ((header) && !hidden) {
-            header.classList.remove('hidden');
-        }
-        if ((scroll - prevScroll > 0) && !hidden)
-        {
-            header.classList.add('hidden');
-            hidden = true;
-            prevScroll = scroll;
+    if ((header) && !hidden)
+        header.classList.remove('hidden');
+
+    if ((scroll - prevScroll > 0) && !hidden) {
+        header.classList.add('hidden');
+        hidden = true;
+        prevScroll = scroll;
+        scrolledDown = 0;
+    } else {
+        if (hidden && (scroll - prevScroll < 0))
+            scrolledDown += scroll - prevScroll;
+        else
             scrolledDown = 0;
-        } else {
-            if (hidden && (scroll - prevScroll < 0))
-                scrolledDown += scroll - prevScroll;
-            else
-                scrolledDown = 0;
-            console.log((scrolledDown < -50) && hidden)
-            if ((scrolledDown < -50) && hidden) {
-                console.log('remove-2')
-                header.classList.remove('hidden');
-                hidden = false;
-                prevScroll = scroll
-            }
-        }
 
-        if (hidden && window.pageYOffset === 0) {
+        if ((scrolledDown < -50) && hidden) {
             header.classList.remove('hidden');
             hidden = false;
             prevScroll = scroll
         }
-
+    }
+    if (hidden && window.pageYOffset === 0) {
+        header.classList.remove('hidden');
+        hidden = false;
         prevScroll = scroll
+    }
+
+    prevScroll = scroll
 }
 
 const overflowHTML = (rule) => {
-  if (rule)
-      document.getElementsByTagName('html')[0].style.overflow ="hidden";
-  else
-      document.getElementsByTagName('html')[0].style.overflow ="";
+  rule ? document.getElementsByTagName('html')[0].style.overflow ="hidden" : document.getElementsByTagName('html')[0].style.overflow ="";
 }
 
 
