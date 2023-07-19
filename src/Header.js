@@ -3,22 +3,27 @@ import {Link} from "react-router-dom";
 import Logo from './logo.svg'
 import {useState} from "react";
 
-let header = document.querySelector('header');
+let header
 let prevScroll = window.pageYOffset;
 let scroll = window.pageYOffset;
 let hidden = false;
 
 let scrolledDown = 0;
 
-function onScroll()
+async function onScroll()
 {
-    if (!header)
+
+    header = await document.querySelector('header');
+
+    if (!header) {
         return;
+    }
 
     scroll = window.pageYOffset;
 
-    if ((header) && !hidden)
+    if ((header) && !hidden) {
         header.classList.remove('hidden');
+    }
 
     if ((scroll - prevScroll > 0) && !hidden) {
         header.classList.add('hidden');
