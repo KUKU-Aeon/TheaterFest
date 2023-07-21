@@ -62,6 +62,7 @@ code {
     position: fixed;
     width: 100%;
     transition: transform 1s ease;
+    z-index: 1000;
   }
 
   header nav a, footer nav a
@@ -145,13 +146,16 @@ code {
     position: fixed;
     width: 100%;
     transition: transform 1s ease;
+    z-index: 1000;
   }
 
   footer nav a
   {
     margin: 0 5px;
+    width: 100%;
     text-decoration: none;
     color: #FFFFFF;
+    font-size: 12px;
   }
 
   header img{
@@ -159,7 +163,7 @@ code {
     width: 65px;
     height: 65px;
     border-radius: 50%;
-    margin: 20px 50px 0 50px;
+    margin: 3vh 7vw;
   }
 
   .hamburger, .hamburger:active, .hamburger:focus {
@@ -172,7 +176,7 @@ code {
     cursor: pointer;
     transition: background-color 0.2s ease-in-out;
     float: right;
-    margin: 35px 50px;
+    margin: 5vh 5vw;
     outline: none !important;
     border: none !important;
     appearance: none !important;
@@ -182,6 +186,7 @@ code {
   header div
   {
     width: 100%;
+    height: max-content;
     z-index: 9999;
   }
 

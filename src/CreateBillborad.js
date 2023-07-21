@@ -35,6 +35,7 @@ const CreateBill = () => {
         db.collection("billboard").doc(docName).set({
             name: data.name,
             place: data.place,
+            price: data.price,
             description: data.description,
             date: data.date,
             time: data.time,
@@ -80,13 +81,18 @@ const CreateBill = () => {
                     }}
                     layout="horizontal"
                     style={{
-                        maxWidth: 600,
+                        maxWidth: "60%",
+                        marginTop: 150,
+                        marginLeft:50,
                     }}
                >
                     <Form.Item label="Введите название" style={{marginTop: 50}} name="name">
                         <Input/>
                     </Form.Item>
                     <Form.Item label="Укажите место" name="place">
+                        <Input  />
+                    </Form.Item>
+                    <Form.Item label="Укажите место" name="price">
                         <Input  />
                     </Form.Item>
                     <Form.Item label="Введите описание" name="description">
@@ -113,7 +119,7 @@ const CreateBill = () => {
                         </Upload>
                     </Form.Item>
                     <Form.Item>
-                        <Button htmlType="submit" style={{marginLeft: 250}}>
+                        <Button htmlType="submit" style={{margin: "0 5%"}}>
                             Создать новую карточку
                         </Button>
                     </Form.Item>

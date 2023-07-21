@@ -26,13 +26,13 @@ function Billboard() {
                 <Meta
                     title={<h1 style={{height: 10}}>{data.name}</h1>}
                     description={
-                      <><h4>Описание: {data.description}</h4><h4>Место: {data.place}</h4><p>Дата: {data.date}</p><p>Время: {data.time}</p></>
+                      <><h4>Описание: {data.description}</h4><h4>Место: {data.place}</h4><p>Дата: {data.date}</p><p>Время: {data.time}</p><br/><h2>Билеты от: <span style={{color: "#273c75"}}>{data.price}₽</span></h2></>
                     }
                 />
                 <Button  style={{
                   width: 200,
                   marginTop: 15,
-                  backgroundColor: `{rgba(255, 234, 167, 1.0)}`,
+                  cursor: "pointer",
                   fontWeight: 700,
                   float: "right",
                 }}>
