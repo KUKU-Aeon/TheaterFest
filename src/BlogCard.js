@@ -1,7 +1,7 @@
 import newsDatabaseContent from "./newsDatabaseContent";
 import {Button, Card} from 'antd';
 import {Link} from "react-router-dom";
-import React from "@types/react";
+import React from "react";
 const { Meta } = Card;
 
 

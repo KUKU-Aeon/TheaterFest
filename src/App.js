@@ -9,6 +9,7 @@ import Billboard from "./Billboard";
 import AdminMenu from "./AdminPage";
 import CreateBillboard from "./CreateBillborad";
 import CreateBlog from "./CreateBlog";
+import Blog from "./Blog";
 
 function App() {
   return (
