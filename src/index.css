@@ -97,6 +97,15 @@ code {
   {
     display: none;
   }
+
+  .grid
+  {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 0 1%;
+    grid-gap: 10px;
+  }
 }
 
 @media (max-width:430px)

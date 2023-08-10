@@ -8,6 +8,7 @@ import Footer from './Footer';
 import Billboard from "./Billboard";
 import AdminMenu from "./AdminPage";
 import CreateBillboard from "./CreateBillborad";
+import CreateBlog from "./CreateBlog";
 
 function App() {
   return (
@@ -37,6 +38,15 @@ function App() {
             <Route path="/make-bill" element={<CreateBillboard/>}>
 
             </Route>
+
+            <Route path="/make-blog" element={<CreateBlog/>}>
+
+            </Route>
+
+            <Route path="/news" element={<Blog/>}>
+
+            </Route>
+
           </Routes>
           <Footer />
       </Router>

@@ -8,6 +8,10 @@ const items = [
         key: '0',
     },
     {
+        label:  <Link to="/make-blog">Новая запись блога</Link>,
+        key: '1',
+    },
+    {
         type: 'divider',
     },
 ];
