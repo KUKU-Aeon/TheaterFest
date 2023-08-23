@@ -23,7 +23,7 @@ const normFile = (e) => {
 const CreateBlog = () => {
     const [file, setFile] = useState("")
     const [image, setImage] = useState("")
-    const [imageList, setImageList] = useState([])
+    const [contentList, setContentList] = useState([])
     const [form] = Form.useForm();
 
 
@@ -36,19 +36,10 @@ const CreateBlog = () => {
         }
         let fileSrc = await handleUpload();
         let docName = `${data.title}-${id}`;
-        let dataSett = {
-            title: data.title,
-            paragraph: data.paragraph,
-            images: imageList,
-            src: fileSrc,
-        }
-
-        console.log(dataSett)
 
         db.collection("news").doc(docName).set({
             title: data.title,
-            paragraph: data.paragraph,
-            images: imageList,
+            content: contentList,
             src: fileSrc,
         }).then(() => {
 
@@ -64,7 +55,7 @@ const CreateBlog = () => {
 
     async function handleChangeImage(event){
         setImage(event.target.files[0])
-        setImageList([...imageList, await handleUploadImage()])
+        setContentList([...contentList, await handleUploadImage()])
     }
 
 
@@ -118,7 +109,9 @@ const CreateBlog = () => {
                         <Input/>
                     </Form.Item>
                     <Form.Item label="Введите абзац" style={{marginTop: 50}} name="paragraph">
-                        <TextArea rows={4}   />
+                        <TextArea rows={4}   onPressEnter={(event) => {
+                            setContentList([...contentList, event.target.value])
+                        }}/>
                     </Form.Item>
                     <Form.Item  name="images" label="Добавить изображение" valuePropName="fileList" getValueFromEvent={normFile} onChange={handleChangeImage}>
                         <Upload action="/upload.do" listType="picture-card">

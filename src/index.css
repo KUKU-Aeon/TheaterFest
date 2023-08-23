@@ -72,6 +72,27 @@ code {
     color: #FFFFFF;
   }
 
+  @keyframes navActive
+  {
+
+   0%
+   {
+     transform: translateY(-100%);
+   }
+   100%
+   {
+     transform: translateY(0);
+     border-bottom:1px solid #FFFFFF;
+   }
+
+  }
+
+  header nav a.active
+  {
+    animation: navActive 1s forwards;
+    transition: .75s;
+  }
+
   header img{
     background-color: #FFFFFF;
     width: 75px;
@@ -105,6 +126,31 @@ code {
     grid-template-columns: 1fr;
     margin: 0 1%;
     grid-gap: 10px;
+  }
+
+  .banner
+  {
+    width: 100vw;
+    border-bottom-left-radius: 50% 15%;
+    border-bottom-right-radius: 50% 15%;
+
+  }
+
+  .blogImage
+  {
+    width: 50vw;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 10px 10px #52ce54;
+    margin: 20px 25%;
+    grid-area: image;
+  }
+
+  .text
+  {
+    width: 100%;
+    font-size: 16px;
+    text-align: center;
   }
 }
 

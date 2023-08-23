@@ -44,7 +44,7 @@ function App() {
 
             </Route>
 
-            <Route path="/news" element={<Blog/>}>
+            <Route path="/news/*" element={<Blog/>}>
 
             </Route>
 

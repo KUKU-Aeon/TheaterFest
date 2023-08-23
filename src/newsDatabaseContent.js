@@ -4,7 +4,7 @@ function newsDatabaseContent() {
     const result = [];
     db.collection("news").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
-            result.push(doc.data());
+            result.push(doc);
         });
     });
     return result;

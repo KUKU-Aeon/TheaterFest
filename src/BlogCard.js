@@ -4,11 +4,10 @@ import {Link} from "react-router-dom";
 import React from "react";
 const { Meta } = Card;
 
-
-
 export const BlogCard = () => {
-    return (<article className={"grid"}>
-        {newsDatabaseContent.map((data) =>
+
+    return <article className={"grid"}>
+        {newsDatabaseContent.map((doc) =>
                 <>
                     <Card
                         style={{
@@ -16,18 +15,18 @@ export const BlogCard = () => {
                         }}
                         cover={
                             <img
-                                alt={data.title}
-                                src={data.src}
+                                alt={doc.data().title}
+                                src={doc.data().src}
                                 style={{height: 200}}
                             />
                         }
                     >
                         <Meta
-                            title={data.title}
-                            description={data.paragraph.substring(0, 70) + '...'}
+                            title={doc.data().title}
                         />
-                        <Button style={{float: "right", marginTop: 20}}><Link to="/news">Подробнее...</Link></Button>
+                        <Button style={{float: "right", marginTop: 20}}><Link to={`news/${doc.id}`}>Подробнее...</Link></Button>
                     </Card>
                 </>
             )}
-</article>)}
+</article>}
+

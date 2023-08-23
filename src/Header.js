@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 import Logo from './logo.svg'
 import {useState} from "react";
 
@@ -82,11 +82,21 @@ function Header() {
                 setIsNavExpanded(!isNavExpanded);
                 overflowHTML(!isNavExpanded)
             }}>
-                <Link to="/">Главная</Link>
-                <Link to="/billboard">Афиша</Link>
-                <Link to="/about">О театре</Link>
-                <Link to="/contact">Контакты</Link>
-                <Link to="/admin">Админ</Link>
+                <NavLink to="/" className={({ isActive, isPending }) =>
+                    isPending ? "" : isActive ? "active" : ""
+                }>Главная</NavLink>
+                <NavLink to="/billboard" className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "active" : ""
+                }>Афиша</NavLink>
+                <NavLink to="/about" className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "active" : ""
+                }>О театре</NavLink>
+                <NavLink to="/contact" className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "active" : ""
+                }>Контакты</NavLink>
+                <NavLink to="/admin" className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "active" : ""
+                }>Админ</NavLink>
             </nav>
         </header>
     );
